@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import {createStore} from "redux"
+import {connect, Provider} from "react-redux"
 import * as serviceWorker from './serviceWorker';
-
+const CreateRedoucer =
+    function (state = {type: "mouthChange"}, action:any)  {
+        console.log(action)
+        mouth=action.mouth
+    return {...state, payload: action.payload}
+    }
+const store = createStore(CreateRedoucer);
+var mouth=1;
+store.dispatch({
+    type:"int",
+    payload:mouth});
 ReactDOM.render(
+<Provider store={store}>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+</Provider>,
   document.getElementById('root')
 );
 

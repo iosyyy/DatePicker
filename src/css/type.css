@@ -1,0 +1,17 @@
+.arrow {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    transform: rotate(45deg);
+}
+.arrowreverse{
+    display:inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+
+    transform: rotate(225deg);
+}
