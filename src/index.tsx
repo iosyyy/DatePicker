@@ -49,9 +49,13 @@ class Linkx extends React.Component{
 
     handleOnclick(e:any)
     {
+        // @ts-ignore
+        const monBegin= this.state.momentBegin
+        // @ts-ignore
+        const monEnd=this.state.momentEnd
         store.dispatch({
             type:"int",
-            payload:{mouth:mouth,list:lists,conBegin:conEnd,conEnd:conEnd}});
+            payload:{mouth:mouth,list:lists,conBegin:monBegin,conEnd:monEnd}});
     }
 
     handleBeginChange(e:any)
