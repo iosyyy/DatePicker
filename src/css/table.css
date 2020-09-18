@@ -1,0 +1,7 @@
+/* table的样式 */
+.bora{
+    border: grey 2px solid ;
+    width:400px ;
+    border-collapse:collapse;
+    text-align: center;
+}

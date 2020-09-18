@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom'
 import {connect} from "react-redux";
-
+import '../css/table.css'
 var dates=['星期1','星期2','星期3','星期4','星期5','星期6','星期天']
 var moux=[31,29,31,30,31,30,31,31,30,31,30,31]
 var mous=[31,28,31,30,31,30,31,31,30,31,30,31]
@@ -12,7 +12,6 @@ class Dates extends React.Component
 {
     constructor(props) {
         super(props);
-        console.log(props)
         const mouth = this.props.match.params.mouth;
         var firstDayOfTheMonth = 3
         this.state={firstDayOfTheMonth:firstDayOfTheMonth-1,mouth:mouth,list:this.props.payload.list }
@@ -41,21 +40,21 @@ class Dates extends React.Component
         return (
             <div>
                 <div>2020年{mouth}</div>
-                <table>
-                    <thead>
-                        <tr>{dates.map((name,index)=>{return <th key={index}>{name}</th>})}</tr>
+                <table className="bora" border="0" cellSpacing="1" cellPadding="0">
+                    <thead className="bora" >
+                        <tr >{dates.map((name,index)=>{return <th className="bora"  key={index}>{name}</th>})}</tr>
                     </thead>
-                    <tbody>
-                    {dates.map((name,index)=>{return (<tr>
+                    <tbody className="bora" >
+                    {dates.map((name,index)=>{return (<tr key={index}>
                         {tem.map((num,index)=>{
                             if(((num===firstDayOfTheMonth)||ans===true)&&sum<=moux[mouth-1])
                             {
                                 ans=true;
-                                return <td key={index}>
+                                return <td className="bora"  key={index}>
                                     {sum++}
                                 </td>
                             }else {
-                                return <td key={index}></td>
+                                return <td className="bora"  key={index}></td>
                             }})}
                     </tr>)})}
 
