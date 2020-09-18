@@ -6,8 +6,8 @@ import {connect, Provider} from "react-redux"
 import * as serviceWorker from './serviceWorker';
 const CreateRedoucer =
     function (state = {type: "mouthChange"}, action:any)  {
-        console.log(action)
-        mouth=action.mouth
+        console.log("Yes")
+        mouth=action.payload
     return {...state, payload: action.payload}
     }
 const store = createStore(CreateRedoucer);
@@ -15,11 +15,17 @@ var mouth=1;
 store.dispatch({
     type:"int",
     payload:mouth});
+store.subscribe(()=>{ReactDOM.render(
+    <Provider store={store}>
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    </Provider>,
+    document.getElementById('root')
+);})
 ReactDOM.render(
 <Provider store={store}>
-  <React.StrictMode>
     <App />
-  </React.StrictMode>
 </Provider>,
   document.getElementById('root')
 );
