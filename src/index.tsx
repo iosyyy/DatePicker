@@ -4,13 +4,12 @@ import App from './App';
 import {createStore} from "redux"
 import {connect, Provider} from "react-redux"
 import * as serviceWorker from './serviceWorker';
-var lists=[{name:'',selectId:-1}]
+var lists=[{name:'',selectId:-1,mouth:0}]
 const CreateRedoucer =
     function (state = {type: "mouthChange"}, action:any)  {
-        console.log("Yes")
         mouth=action.payload
         for(var i=0;i<49;i++)
-            lists[i]={name:'',selectId:-1}
+            lists[i]={name:'',selectId:-1,mouth: 0}
 
     return {...state, payload: {mouth:mouth,list:lists}}
 }
