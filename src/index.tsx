@@ -56,11 +56,47 @@ class Linkx extends React.Component{
 
     handleBeginChange(e:any)
     {
-        conBegin=e;
+        // @ts-ignore
+        let conBegin=e
+        // @ts-ignore
+        let conEnd=this.state.momentEnd
+        if(conBegin.toArray()[1]>conEnd.toArray()[1])
+        {
+            let w=conBegin;
+            conBegin=conEnd;
+            conEnd=w;
+        }else if(conBegin.toArray()[1]===conEnd.toArray()[1])
+        {
+            if(conBegin.toArray()[2]>conEnd.toArray()[2])
+            {
+                let w=conBegin;
+                conBegin=conEnd;
+                conEnd=w;
+            }
+        }
+        this.setState({momentBegin:conBegin,momentEnd:conEnd})
     }
     handleEndChange(e:any)
     {
-        conEnd=e;
+        // @ts-ignore
+        let conBegin=this.state.momentBegin
+        // @ts-ignore
+        let conEnd=e
+        if(conBegin.toArray()[1]>conEnd.toArray()[1])
+        {
+            let w=conBegin;
+            conBegin=conEnd;
+            conEnd=w;
+        }else if(conBegin.toArray()[1]===conEnd.toArray()[1])
+        {
+            if(conBegin.toArray()[2]>conEnd.toArray()[2])
+            {
+                let w=conBegin;
+                conBegin=conEnd;
+                conEnd=w;
+            }
+        }
+        this.setState({momentBegin:conBegin,momentEnd:conEnd})
     }
     render() {
         // @ts-ignore
@@ -70,9 +106,9 @@ class Linkx extends React.Component{
         return (
             (<form>
                 <label >开始时间:</label>
-                <DatePicker onChange={this.handleBeginChange} disabledDate={disabledDate} defaultValue={moment("2020-01-01")}/>
+                <DatePicker value={momentBegin} onChange={this.handleBeginChange} disabledDate={disabledDate} defaultValue={moment("2020-01-01")}/>
                 <label >结束时间:</label>
-                <DatePicker  onChange={this.handleEndChange} disabledDate={disabledDate} defaultValue={moment("2020-01-01")}/>
+                <DatePicker value={momentEnd}  onChange={this.handleEndChange} disabledDate={disabledDate} defaultValue={moment("2020-01-01")}/>
                 <br/>
                 <button onClick={this.handleOnclick} type="submit">提交</button>
             </form>)
