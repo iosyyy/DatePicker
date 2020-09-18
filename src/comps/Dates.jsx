@@ -48,7 +48,7 @@ class Dates extends React.Component
                     <tbody>
                     {dates.map((name,index)=>{return (<tr>
                         {tem.map((num,index)=>{
-                            if((num===firstDayOfTheMonth)||ans===true&&sum<=moux[mouth-1])
+                            if(((num===firstDayOfTheMonth)||ans===true)&&sum<=moux[mouth-1])
                             {
                                 ans=true;
                                 return <td key={index}>
@@ -62,7 +62,6 @@ class Dates extends React.Component
                     </tbody>
 
                 </table>
-                <div>{firstDayOfTheMonth}</div>
             </div>
 
         );
