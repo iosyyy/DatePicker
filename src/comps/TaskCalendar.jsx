@@ -38,10 +38,17 @@ class TaskCalendar extends React.Component
         const mouth = '/mouth'+'/'+this.state.mouth
         return (
             <HashRouter basename="/TaskCalendar">
-                <Link to={mouth} onClick={this.handleClickDown} className="arrowreverse" />
-                &nbsp;&nbsp;&nbsp;
-                <Link to={mouth} onClick={this.handleClickUp} className="arrow" />
-                <Route path="/mouth/:mouth" component={Dates}/>
+
+                <Link to={mouth} onClick={this.handleClickDown} className="yuan" >
+                    <div className="arrowreverse">
+                    </div>
+                </Link>
+
+
+                <Link to={mouth} onClick={this.handleClickUp} className="yuan" >
+                    <div className="arrow"></div>
+                </Link>
+                <Route  path="/mouth/:mouth" component={Dates}/>
             </HashRouter>
         );
     }

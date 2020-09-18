@@ -36,7 +36,7 @@ class Dates extends React.Component {
         let sum = 1;
         return (
             <div>
-                <div>2020年{mouth}</div>
+                <div>2020年{mouth}月</div>
                 <table className="bora" border="0" cellSpacing="1" cellPadding="0">
                     <thead className="bora">
                     <tr>{dates.map((name, index) => {

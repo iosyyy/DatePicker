@@ -1,17 +1,26 @@
 .arrow {
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 13px;
+    height: 13px;
     border-top: 1px solid black;
     border-right: 1px solid black;
     transform: rotate(45deg);
 }
 .arrowreverse{
     display:inline-block;
-    width: 8px;
-    height: 8px;
+    width: 13px;
+    height: 13px;
     border-top: 1px solid black;
     border-right: 1px solid black;
-
+    margin-left: 6px;
     transform: rotate(225deg);
+}
+.yuan{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #787474;
+    margin-right: 3px;
+    margin-left: 2px;
+    border-radius:50%;
 }
