@@ -4,22 +4,24 @@ import App from './App';
 import {createStore} from "redux"
 import {connect, Provider} from "react-redux"
 import * as serviceWorker from './serviceWorker';
+var lists=[{name:'',selectId:-1}]
 const CreateRedoucer =
     function (state = {type: "mouthChange"}, action:any)  {
         console.log("Yes")
         mouth=action.payload
-    return {...state, payload: action.payload}
-    }
+        for(var i=0;i<49;i++)
+            lists[i]={name:'',selectId:-1}
+
+    return {...state, payload: {mouth:mouth,list:lists}}
+}
 const store = createStore(CreateRedoucer);
 var mouth=1;
 store.dispatch({
     type:"int",
-    payload:mouth});
+    payload:{mouth:mouth,list:lists}});
 store.subscribe(()=>{ReactDOM.render(
     <Provider store={store}>
-        <React.StrictMode>
             <App />
-        </React.StrictMode>
     </Provider>,
     document.getElementById('root')
 );})

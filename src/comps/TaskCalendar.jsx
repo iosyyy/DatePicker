@@ -11,8 +11,9 @@ class TaskCalendar extends React.Component
     constructor(props) {
         super(props);
         // this.state={mouth:props.mouth}
-        this.state={mouth:this.props.payload}
-        mou=this.props.payload
+        console.log(this.props.payload.mouth.mouth)
+        this.state={mouth:this.props.payload.mouth.mouth}
+        mou=this.props.payload.mouth.mouth
         this.handleClickUp=this.handleClickUp.bind(this)
         this.handleClickDown=this.handleClickDown.bind(this)
     }
