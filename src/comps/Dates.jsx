@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from 'react-dom'
 import {connect} from "react-redux";
 import '../css/table.css'
 
@@ -7,7 +6,7 @@ var dates = ['星期1', '星期2', '星期3', '星期4', '星期5', '星期6', '
 var moux = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 var mous = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 var tem = [1, 2, 3, 4, 5, 6, 7]
-var tes=[1,2,3,4,5,6]
+var tes = [1, 2, 3, 4, 5, 6]
 var year = 2019
 
 class Dates extends React.Component {
