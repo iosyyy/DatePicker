@@ -58,7 +58,7 @@ class Linkx extends React.Component {
             type: "int",
             payload: {name: name, mouth: mouth, list: lists, conBegin: conBegin, conEnd: conEnd}
         });
-        this.setState({name:'',conBegin:moment("2020-01-01"),conEnd:moment("2020-01-01")})
+        this.setState({name:'',momentBegin:moment("2020-01-01"),momentEnd:moment("2020-01-01")})
     }
 
     handleBeginChange(e: any) {
@@ -115,7 +115,8 @@ class Linkx extends React.Component {
             (<form>
                 <label>开始时间:</label>
                 <DatePicker value={momentBegin} onChange={this.handleBeginChange} disabledDate={disabledDate}
-                            defaultValue={moment("2020-01-01")}/>
+                            defaultValue={moment("2020-01-01")}/>&nbsp;&nbsp;
+
                 <label>结束时间:</label>
                 <DatePicker value={momentEnd} onChange={this.handleEndChange} disabledDate={disabledDate}
                             defaultValue={moment("2020-01-01")}/>
@@ -123,7 +124,8 @@ class Linkx extends React.Component {
                 <label>事件名称:</label>
 
                 <Input value={name}
-                       style={{width: '130px'}} onChange={this.handleChangeName} />
+                       style={{width: '150px'}} onChange={this.handleChangeName} />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button onClick={this.handleOnclick} type="submit">提交</button>
             </form>)
         );

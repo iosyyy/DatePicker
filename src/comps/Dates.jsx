@@ -36,31 +36,34 @@ class Dates extends React.Component {
         return (
             <div>
                 <div>2020年{mouth}月</div>
-                <table className="bora" border="0" cellSpacing="1" cellPadding="0">
-                    <thead className="bora">
-                    <tr>{dates.map((name, index) => {
-                        return <th className="bora" key={index}>{name}</th>
-                    })}</tr>
-                    </thead>
-                    <tbody className="bora">
-                    {tes.map((name, index) => {
-                        return (<tr key={index}>
-                            {tem.map((num, index) => {
-                                if (((num === firstDayOfTheMonth) || ans === true) && sum <= moux[mouth - 1]) {
-                                    ans = true;
-                                    return <td className="bora" key={index}>
-                                        {sum++}
-                                    </td>
-                                } else {
-                                    return <td className="bora" key={index}></td>
-                                }
+                <div style={{width: "100%", display: "flex",justifyContent: "center"}}>
+                        <table className="bora" border="0" cellSpacing="1" cellPadding="0">
+
+                            <thead>
+                            <tr>{dates.map((name, index) => {
+                                return <th  key={index}>{name}</th>
+                            })}</tr>
+                            </thead>
+                            <tbody>
+                            {tes.map((name, index) => {
+                                return (<tr key={index}>
+                                    {tem.map((num, index) => {
+                                        if (((num === firstDayOfTheMonth) || ans === true) && sum <= moux[mouth - 1]) {
+                                            ans = true;
+                                            return <td  key={index}>
+                                                {sum++}
+                                            </td>
+                                        } else {
+                                            return (<td key={index}></td>)
+                                        }
+                                    })}
+                                </tr>)
                             })}
-                        </tr>)
-                    })}
 
-                    </tbody>
+                            </tbody>
 
-                </table>
+                        </table>
+                    </div>
             </div>
 
         );

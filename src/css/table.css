@@ -1,7 +1,11 @@
 /* table的样式 */
-.bora {
-    border: grey 2px solid;
-    width: 400px;
+table,th,thead,tr,td {
+    border: darkgray 2px solid;
+
     border-collapse: collapse;
     text-align: center;
+}
+.bora{
+    width: 900px;
+    height: 600px;
 }
