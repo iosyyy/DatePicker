@@ -1,7 +1,7 @@
 .arrow {
     display: inline-block;
-    width: 13px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
     border-top: 1px solid black;
     border-right: 1px solid black;
     transform: rotate(45deg);
@@ -9,8 +9,8 @@
 
 .arrowreverse {
     display: inline-block;
-    width: 13px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
     border-top: 1px solid black;
     border-right: 1px solid black;
     margin-left: 6px;

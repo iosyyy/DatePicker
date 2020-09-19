@@ -14,6 +14,7 @@ class Dates extends React.Component {
         super(props);
         const mouth = this.props.match.params.mouth;
         var firstDayOfTheMonth = 3
+
         this.state = {firstDayOfTheMonth: firstDayOfTheMonth - 1, mouth: mouth, list: this.props.payload.list}
     }
 
@@ -36,34 +37,35 @@ class Dates extends React.Component {
         return (
             <div>
                 <div>2020年{mouth}月</div>
-                <div style={{width: "100%", display: "flex",justifyContent: "center"}}>
-                        <table className="bora" border="0" cellSpacing="1" cellPadding="0">
+                <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
+                    <table className="bora" >
 
-                            <thead>
-                            <tr>{dates.map((name, index) => {
-                                return <th  key={index}>{name}</th>
-                            })}</tr>
-                            </thead>
-                            <tbody>
-                            {tes.map((name, index) => {
-                                return (<tr key={index}>
-                                    {tem.map((num, index) => {
-                                        if (((num === firstDayOfTheMonth) || ans === true) && sum <= moux[mouth - 1]) {
-                                            ans = true;
-                                            return <td  key={index}>
-                                                {sum++}
-                                            </td>
-                                        } else {
-                                            return (<td key={index}></td>)
-                                        }
-                                    })}
-                                </tr>)
-                            })}
+                        <thead>
+                        <tr>{dates.map((name, index) => {
+                            return <th key={index}>{name}</th>
+                        })}</tr>
+                        </thead>
+                        <tbody>
+                        {tes.map((name, index) => {
+                            return (<tr key={index}>
+                                {tem.map((num, index) => {
+                                    if (((num === firstDayOfTheMonth) || ans === true) && sum <= moux[mouth - 1]) {
+                                        ans = true;
+                                        return <td key={index}>
+                                            {sum++}
 
-                            </tbody>
+                                        </td>
+                                    } else {
+                                        return (<td key={index}>&nbsp;&nbsp;</td>)
+                                    }
+                                })}
+                            </tr>)
+                        })}
 
-                        </table>
-                    </div>
+                        </tbody>
+
+                    </table>
+                </div>
             </div>
 
         );

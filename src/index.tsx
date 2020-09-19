@@ -14,7 +14,7 @@ const CreateRedoucer =
         mouth = action.payload
         if (action.type === 'int') {
             console.log(action)
-            lists.push({name: '', conBegin: action.conBegin, conEnd: action.conEnd})
+            lists.push({name: action.name, conBegin: action.conBegin, conEnd: action.conEnd})
             return {...state, payload: {mouth: mouth, list: lists}}
         } else {
             return {...state}
