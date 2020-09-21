@@ -8,16 +8,14 @@ import {DatePicker, Input} from "antd";
 import moment from 'moment';
 import 'antd/dist/antd.min.css'
 
-var lists = [{name: 'Hello', conBegin: moment(), conEnd: moment()}]
+var lists: { name: any; conBegin: any; conEnd: any; }[] = []
 const CreateRedoucer =
     function (state = {type: "mouthChange"}, action: any) {
-        mouth = action.payload
         if (action.type === 'int') {
-            console.log(action)
             lists.push({name: action.payload.name, conBegin: action.payload.conBegin, conEnd: action.payload.conEnd})
             return {...state, payload: {mouth: mouth, list: lists}}
         } else {
-            return {...state}
+            return {...state,payload: {mouth: mouth,list: lists}}
         }
     }
 const disabledDate = (current: any) => {
@@ -30,14 +28,13 @@ const disabledDate = (current: any) => {
 }
 const store = createStore(CreateRedoucer);
 var mouth = 1;
-store.dispatch({
-    type: "int",
-    payload: {mouth: mouth, conBegin: moment(), conEnd: moment()}
-});
 let conBegin = moment();
 let conEnd = moment();
 let name = '';
-
+store.dispatch({
+    type:'init',
+    mouth:1
+})
 class Linkx extends React.Component {
     constructor(props: any) {
         super(props);

@@ -10,8 +10,9 @@ class TaskCalendar extends React.Component {
     constructor(props) {
         super(props);
         // this.state={mouth:props.mouth}
-        this.state = {mouth: this.props.payload.mouth.mouth}
-        mou = this.props.payload.mouth.mouth
+        console.log(this.props.payload.mouth)
+        this.state = {mouth: this.props.payload.mouth}
+        mou = this.props.payload.mouth
         this.handleClickUp = this.handleClickUp.bind(this)
         this.handleClickDown = this.handleClickDown.bind(this)
     }
@@ -19,7 +20,7 @@ class TaskCalendar extends React.Component {
     handleClickUp() {
         if (mou >= 0 && mou <= 11) {
             mou = this.state.mouth + 1
-            this.setState({mouth: this.state.mouth + 1})
+            this.setState({mouth: mou})
         }
 
     }
@@ -27,7 +28,7 @@ class TaskCalendar extends React.Component {
     handleClickDown() {
         if (mou >= 2 && mou <= 12) {
             mou = this.state.mouth - 1
-            this.setState({mouth: this.state.mouth - 1})
+            this.setState({mouth: mou})
         }
 
     }
