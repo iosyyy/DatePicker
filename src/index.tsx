@@ -8,13 +8,13 @@ import {DatePicker, Input} from "antd";
 import moment from 'moment';
 import 'antd/dist/antd.min.css'
 
-var lists = [{name: '', conBegin: moment(), conEnd: moment()}]
+var lists = [{name: 'Hello', conBegin: moment(), conEnd: moment()}]
 const CreateRedoucer =
     function (state = {type: "mouthChange"}, action: any) {
         mouth = action.payload
         if (action.type === 'int') {
             console.log(action)
-            lists.push({name: action.name, conBegin: action.conBegin, conEnd: action.conEnd})
+            lists.push({name: action.payload.name, conBegin: action.payload.conBegin, conEnd: action.payload.conEnd})
             return {...state, payload: {mouth: mouth, list: lists}}
         } else {
             return {...state}
@@ -32,11 +32,12 @@ const store = createStore(CreateRedoucer);
 var mouth = 1;
 store.dispatch({
     type: "int",
-    payload: {mouth: mouth, list: lists, conBegin: moment(), conEnd: moment()}
+    payload: {mouth: mouth, conBegin: moment(), conEnd: moment()}
 });
 let conBegin = moment();
 let conEnd = moment();
 let name = '';
+
 class Linkx extends React.Component {
     constructor(props: any) {
         super(props);
@@ -58,7 +59,7 @@ class Linkx extends React.Component {
             type: "int",
             payload: {name: name, mouth: mouth, list: lists, conBegin: conBegin, conEnd: conEnd}
         });
-        this.setState({name:'',momentBegin:moment("2020-01-01"),momentEnd:moment("2020-01-01")})
+        this.setState({name: '', momentBegin: moment("2020-01-01"), momentEnd: moment("2020-01-01")})
     }
 
     handleBeginChange(e: any) {
@@ -99,9 +100,8 @@ class Linkx extends React.Component {
         this.setState({momentBegin: conBegin, momentEnd: conEnd})
     }
 
-    handleChangeName(e:any)
-    {
-        this.setState({name:e.target.value})
+    handleChangeName(e: any) {
+        this.setState({name: e.target.value})
     }
 
     render() {
@@ -124,7 +124,7 @@ class Linkx extends React.Component {
                 <label>事件名称:</label>
 
                 <Input value={name}
-                       style={{width: '150px'}} onChange={this.handleChangeName} />
+                       style={{width: '150px'}} onChange={this.handleChangeName}/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button onClick={this.handleOnclick} type="submit">提交</button>
             </form>)

@@ -1,6 +1,6 @@
 /* table的样式 */
 table,th,thead,tr,td {
-    border: darkgray 2px solid;
+    border: #20355e 2px solid;
 
     border-collapse: collapse;
     text-align: center;

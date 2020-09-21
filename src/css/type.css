@@ -2,8 +2,8 @@
     display: inline-block;
     width: 10px;
     height: 10px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 1px solid #20355e;
+    border-right: 1px solid #20355e;
     transform: rotate(45deg);
 }
 
@@ -11,8 +11,8 @@
     display: inline-block;
     width: 10px;
     height: 10px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 1px solid #20355e;
+    border-right: 1px solid #20355e;
     margin-left: 6px;
     transform: rotate(225deg);
 }

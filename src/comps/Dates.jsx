@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import '../css/table.css'
+import Line from "./Line";
 
 var dates = ['星期1', '星期2', '星期3', '星期4', '星期5', '星期6', '星期天']
 var moux = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -36,27 +37,27 @@ class Dates extends React.Component {
         let sum = 1;
         return (
             <div>
+                <Line/>
                 <div>2020年{mouth}月</div>
                 <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-                    <table className="bora" >
-
-                        <thead>
-                        <tr>{dates.map((name, index) => {
-                            return <th key={index}>{name}</th>
+                    <table border="1" cellPadding="0" cellSpacing="0" className="bora">
+                        <thead >
+                        <tr >{dates.map((name, index) => {
+                            return <th  key={index}>{name}</th>
                         })}</tr>
                         </thead>
                         <tbody>
                         {tes.map((name, index) => {
-                            return (<tr key={index}>
+                            return (<tr  key={index}>
                                 {tem.map((num, index) => {
                                     if (((num === firstDayOfTheMonth) || ans === true) && sum <= moux[mouth - 1]) {
                                         ans = true;
-                                        return <td key={index}>
-                                            {sum++}
-
+                                        return <td  key={index}>
+                                            {sum}
+                                            <Line day={sum++} mouth={mouth}/>
                                         </td>
                                     } else {
-                                        return (<td key={index}>&nbsp;&nbsp;</td>)
+                                        return (<td  key={index}>&nbsp;&nbsp;&nbsp;</td>)
                                     }
                                 })}
                             </tr>)
