@@ -54,7 +54,7 @@ class Dates extends React.Component {
                                         ans = true;
                                         return <td  key={index}>
                                             {sum}
-                                            <Line day={sum++} mouth={mouth}/>
+                                            <Line day={sum++} mouth={Number.parseInt(mouth)}/>
                                         </td>
                                     } else {
                                         return (<td  key={index}>&nbsp;&nbsp;&nbsp;</td>)

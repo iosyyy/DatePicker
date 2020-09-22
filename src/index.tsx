@@ -9,10 +9,11 @@ import moment from 'moment';
 import 'antd/dist/antd.min.css'
 
 var lists: { name: any; conBegin: any; conEnd: any; }[] = []
+// @ts-ignore
 const CreateRedoucer =
-    function (state = {type: "mouthChange"}, action: any) {
+    function (state: any, action: any) {
+        console.log(action)
         if (action.type === 'int') {
-            lists.push({name: action.payload.name, conBegin: action.payload.conBegin, conEnd: action.payload.conEnd})
             return {...state, payload: {mouth: mouth, list: lists}}
         } else {
             return {...state,payload: {mouth: mouth,list: lists}}
@@ -52,6 +53,7 @@ class Linkx extends React.Component {
         conEnd = this.state.momentEnd
         // @ts-ignore
         name = this.state.name
+        lists.push({name: name,conBegin: conBegin, conEnd: conEnd})
         store.dispatch({
             type: "int",
             payload: {name: name, mouth: mouth, list: lists, conBegin: conBegin, conEnd: conEnd}
