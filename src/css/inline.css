@@ -1,5 +1,9 @@
 .inlinecss{
-    height: 20px;
     width: auto;
     background: sandybrown;
+    border-bottom: 2px solid seashell;
+    position: absolute;
+    float: left;
+    overflow:auto;
+
 }

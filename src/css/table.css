@@ -1,11 +1,15 @@
 /* table的样式 */
-table,th,thead,tr,td {
+tbody{
     border: #20355e 2px solid;
 
-    border-collapse: collapse;
-    text-align: center;
+}
+th{
+  border-top: 1px solid;
+}
+td{
+    border:1px solid;
 }
 .bora{
     width: 900px;
-    height: 600px;
+    height: 800px;
 }

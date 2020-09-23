@@ -40,7 +40,7 @@ class Dates extends React.Component {
                 <Line/>
                 <div>2020年{mouth}月</div>
                 <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-                    <table border="1" cellPadding="0" cellSpacing="0" className="bora">
+                    <table  cellPadding="0" cellSpacing="0" className="bora">
                         <thead >
                         <tr >{dates.map((name, index) => {
                             return <th  key={index}>{name}</th>
@@ -52,10 +52,11 @@ class Dates extends React.Component {
                                 {tem.map((num, index) => {
                                     if (((num === firstDayOfTheMonth) || ans === true) && sum <= moux[mouth - 1]) {
                                         ans = true;
-                                        return <td  key={index}>
-                                            {sum}
+                                        return(
+                                        <td  key={index}>
+                                            <td style={{border:"none"}}>{sum}</td>
                                             <Line day={sum++} mouth={Number.parseInt(mouth)}/>
-                                        </td>
+                                        </td>)
                                     } else {
                                         return (<td  key={index}>&nbsp;&nbsp;&nbsp;</td>)
                                     }
