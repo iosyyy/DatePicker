@@ -7,6 +7,9 @@ th{
   border-top: 1px solid;
 }
 td{
+    text-align:left;
+    vertical-align:top;
+
     border:1px solid;
 }
 .bora{

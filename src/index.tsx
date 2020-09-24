@@ -53,6 +53,11 @@ class Linkx extends React.Component {
         conEnd = this.state.momentEnd
         // @ts-ignore
         name = this.state.name
+        if(name=="")
+        {
+            return ;
+        }
+
         lists.push({name: name,conBegin: conBegin, conEnd: conEnd})
         store.dispatch({
             type: "int",
@@ -122,7 +127,7 @@ class Linkx extends React.Component {
                 <br/>
                 <label>事件名称:</label>
 
-                <Input value={name}
+                <Input maxLength={50} value={name}
                        style={{width: '150px'}} onChange={this.handleChangeName}/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button onClick={this.handleOnclick} type="submit">提交</button>

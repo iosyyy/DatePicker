@@ -20,6 +20,7 @@ class Dates extends React.Component {
     }
 
     render() {
+
         let firstDayOfTheMonth = this.state.firstDayOfTheMonth
         let list = this.state.list
         const mouth = this.props.match.params.mouth

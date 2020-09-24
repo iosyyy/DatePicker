@@ -1,9 +1,10 @@
 .inlinecss{
-    width: auto;
+    width: 500px;
     background: sandybrown;
     border-bottom: 2px solid seashell;
     position: absolute;
     float: left;
-    overflow:auto;
+    clear: both;
+    display: inline-block;
 
 }
